@@ -9,42 +9,37 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      wholeName: "1",
-      adress: "3",
-      phone: "4",
-      email: "5",
-      description: "6",
-      age: "15",
+      wholeName: "",
+      adress: "",
+      phone: "",
+      email: "",
+      description: "",
+      age: "",
+      
+      education: [
+        {
+          school: "",
+          degree: "",
+          yearStart: "",
+          yearEnd: "",
+        },
+      ],
 
       experience: [
         {
-          position: "7",
-          company: "8",
-          yearStart: "9",
-          yearEnd: "10",
+          position: "",
+          company: "",
+          yearStart: "",
+          yearEnd: "",
         },
         {
-          position: "7",
-          company: "8",
-          yearStart: "9",
-          yearEnd: "10",
+          position: "",
+          company: "",
+          yearStart: "",
+          yearEnd: "",
         },
       ],
 
-      education: [
-        {
-          school: "11",
-          degree: "12",
-          yearStart: "9",
-          yearEnd: "10",
-        },
-        {
-          school: "11",
-          degree: "12",
-          yearStart: "9",
-          yearEnd: "10",
-        },
-      ],
     }
 
     this.changeName = this.changeName.bind(this);
@@ -54,6 +49,10 @@ class App extends React.Component {
     this.changeDesc = this.changeDesc.bind(this);
     this.changeAge = this.changeAge.bind(this);
 
+    this.changeSchool = this.changeSchool.bind(this);
+    this.changeDeg = this.changeDeg.bind(this);
+    this.changeEYearStart = this.changeEYearStart.bind(this);
+    this.changeEYearEnd = this.changeEYearEnd.bind(this);
   }
 
   changeName = (e) => {
@@ -92,6 +91,42 @@ class App extends React.Component {
     });
   }
 
+  changeSchool = (e) => {
+    let copyState = this.state;
+    copyState.education[copyState.education.length - 1].school = e.target.value;
+
+    this.setState({
+      copyState
+    });
+  }
+
+  changeDeg = (e) => {
+    let copyState = this.state;
+    copyState.education[copyState.education.length - 1].degree = e.target.value;
+
+    this.setState({
+      copyState
+    });
+  }
+
+  changeEYearStart = (e) => {
+    let copyState = this.state;
+    copyState.education[copyState.education.length - 1].yearStart = e.target.value;
+
+    this.setState({
+      copyState
+    });
+  }
+
+  changeEYearEnd = (e) => {
+    let copyState = this.state;
+    copyState.education[copyState.education.length - 1].yearEnd = e.target.value;
+
+    this.setState({
+      copyState
+    });
+  }
+
   render() {
     let functs = {
       'changeName': this.changeName,
@@ -100,6 +135,11 @@ class App extends React.Component {
       'changeEmail': this.changeEmail,
       'changeAge': this.changeAge,
       'changeDesc': this.changeDesc,
+
+      'changeSchool': this.changeSchool,
+      'changeDeg': this.changeDeg,
+      'changeEYearStart': this.changeEYearStart,
+      'changeEYearEnd': this.changeEYearEnd,
     };
 
     return (

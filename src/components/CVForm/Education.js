@@ -11,12 +11,22 @@ class Education extends React.Component {
             Estudios:
             {this.props.education.map((item) => {
                 return <div>
-                    Establecimiento: {item.school}
-                    Titulo: {item.degree}
-                    Desde: {item.yearStart}
-                    Hasta: {item.yearEnd}
+                    Establecimiento: <input
+                        onChange={this.props.functions.changeSchool}
+                    />
+                    Titulo: <input
+                        onChange={this.props.functions.changeDeg}
+                    />
+                    Desde: <input
+                        onChange={this.props.functions.changeEYearStart}
+                    />
+                    Hasta: <input
+                        onChange={this.props.functions.changeEYearEnd}
+                    />
                 </div>
             })}
+
+            <button>Agregar</button>
         </div>
     );
   }
