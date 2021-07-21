@@ -10,7 +10,7 @@ class App extends React.Component {
 
     this.state = {
       wholeName: "1",
-      address: "3",
+      adress: "3",
       phone: "4",
       email: "5",
       description: "6",
@@ -45,15 +45,67 @@ class App extends React.Component {
           yearEnd: "10",
         },
       ],
-
     }
+
+    this.changeName = this.changeName.bind(this);
+    this.changeAdress = this.changeAdress.bind(this);
+    this.changePhone = this.changePhone.bind(this);
+    this.changeEmail = this.changeEmail.bind(this);
+    this.changeDesc = this.changeDesc.bind(this);
+    this.changeAge = this.changeAge.bind(this);
+
+  }
+
+  changeName = (e) => {
+    this.setState({
+      wholeName: e.target.value,
+    });
+  }
+  
+  changeAdress = (e) => {
+    this.setState({
+      adress: e.target.value,
+    });
+  }
+
+  changePhone = (e) => {
+    this.setState({
+      phone: e.target.value,
+    });
+  }
+
+  changeEmail = (e) => {
+    this.setState({
+      email: e.target.value,
+    });
+  }
+
+  changeDesc = (e) => {
+    this.setState({
+      description: e.target.value,
+    });
+  }
+
+  changeAge = (e) => {
+    this.setState({
+      age: e.target.value,
+    });
   }
 
   render() {
+    let functs = {
+      'changeName': this.changeName,
+      'changeAdress': this.changeAdress,
+      'changePhone': this.changePhone,
+      'changeEmail': this.changeEmail,
+      'changeAge': this.changeAge,
+      'changeDesc': this.changeDesc,
+    };
+
     return (
       <>
         <Header />
-        <Main {...this.state}/>
+        <Main {...this.state} functions={functs}/>
         <Footer />
       </>
     );

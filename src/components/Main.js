@@ -11,7 +11,7 @@ class Main extends React.Component {
     return (
         <div>
             <CVForm {...this.props}/>
-            <CVPreview />
+            <CVPreview {...this.props}/>
       </div>
     );
   }

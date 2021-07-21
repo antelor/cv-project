@@ -7,7 +7,14 @@ class GeneralPrev extends React.Component {
 
   render() {
     return (
-      <div></div>
+        <div>
+            Nombre: {this.props.wholeName}
+            Direccion: {this.props.adress}
+            Telefono: {this.props.phone}
+            E-mail: {this.props.email}
+            Descripcion: {this.props.description}
+            Edad: {this.props.age}
+        </div>
     );
   }
 }

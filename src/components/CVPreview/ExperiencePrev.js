@@ -7,7 +7,17 @@ class ExperiencePrev extends React.Component {
 
   render() {
     return (
-      <div></div>
+        <div>
+            Experiencia:
+            {this.props.experience.map((item) => {
+                return <div>
+                    Posicion: {item.position}
+                    Compania: {item.company}
+                    Desde: {item.yearStart}
+                    Hasta: {item.yearEnd}
+                </div>
+            })}
+        </div>
     );
   }
 }

@@ -6,14 +6,27 @@ class General extends React.Component {
   }
 
   render() {
-    return (
+      return (      
         <div>
-            Nombre: {this.props.wholeName}
-            Direccion: {this.props.address}
-            Telefono: {this.props.phone}
-            E-mail: {this.props.email}
-            Descripcion: {this.props.description}
-            Edad: {this.props.age}
+            Nombre: <input
+                onChange={this.props.functions.changeName}
+            />
+            
+            Direccion: <input
+                onChange={this.props.functions.changeAdress}
+            />
+            Telefono: <input
+                onChange={this.props.functions.changePhone}
+            />
+            E-mail: <input
+                onChange={this.props.functions.changeEmail}
+            />
+            Descripcion: <input
+                onChange={this.props.functions.changeDesc}
+            />
+            Edad: <input
+                onChange={this.props.functions.changeAge}
+            />
         </div>
     );
   }

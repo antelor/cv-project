@@ -10,11 +10,12 @@ class CVPreview extends React.Component {
 
   render() {
     return (
-      <div>
-            <EducationPrev />
-            <ExperiencePrev />
-            <GeneralPrev />
-      </div>
+        <div>
+            Curriculum preview:
+            <GeneralPrev {...this.props}/>
+            <EducationPrev {...this.props}/>
+            <ExperiencePrev {...this.props}/>
+        </div>
     );
   }
 }

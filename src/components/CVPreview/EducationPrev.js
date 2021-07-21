@@ -7,7 +7,17 @@ class EducationPrev extends React.Component {
 
   render() {
     return (
-      <div></div>
+        <div>
+            Estudios:
+            {this.props.education.map((item) => {
+                return <div>
+                    Establecimiento: {item.school}
+                    Titulo: {item.degree}
+                    Desde: {item.yearStart}
+                    Hasta: {item.yearEnd}
+                </div>
+            })}
+        </div>
     );
   }
 }
