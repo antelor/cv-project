@@ -32,16 +32,11 @@ class App extends React.Component {
           yearStart: "",
           yearEnd: "",
         },
-        {
-          position: "",
-          company: "",
-          yearStart: "",
-          yearEnd: "",
-        },
       ],
 
     }
 
+    //General
     this.changeName = this.changeName.bind(this);
     this.changeAdress = this.changeAdress.bind(this);
     this.changePhone = this.changePhone.bind(this);
@@ -49,6 +44,7 @@ class App extends React.Component {
     this.changeDesc = this.changeDesc.bind(this);
     this.changeAge = this.changeAge.bind(this);
 
+    //Educacion
     this.changeSchool = this.changeSchool.bind(this);
     this.changeDeg = this.changeDeg.bind(this);
     this.changeEYearStart = this.changeEYearStart.bind(this);
@@ -56,8 +52,19 @@ class App extends React.Component {
 
     this.addEd = this.addEd.bind(this);
     this.removeEd = this.removeEd.bind(this);
+
+    //Experiencia
+    this.changePosition = this.changePosition.bind(this);
+    this.changeCompany = this.changeCompany.bind(this);
+    this.changeExpYearStart = this.changeExpYearStart.bind(this);
+    this.changeExpYearEnd = this.changeExpYearEnd.bind(this);
+
+    this.addExp = this.addExp.bind(this);
+    this.removeExp = this.removeExp.bind(this);
+
   }
 
+  //General
   changeName = (e) => {
     this.setState({
       wholeName: e.target.value,
@@ -94,6 +101,7 @@ class App extends React.Component {
     });
   }
 
+  //Educacion
   changeSchool = (e) => {
     let copyState = this.state;
     copyState.education[copyState.education.length - 1].school = e.target.value;
@@ -155,6 +163,68 @@ class App extends React.Component {
     });
   }
 
+  //Experiencia
+  changePosition = (e) => {
+    let copyState = this.state;
+    copyState.experience[copyState.experience.length - 1].position = e.target.value;
+
+    this.setState({
+      copyState
+    });
+  }
+
+  changeCompany = (e) => {
+    let copyState = this.state;
+    copyState.experience[copyState.experience.length - 1].company = e.target.value;
+
+    this.setState({
+      copyState
+    });
+  }
+
+  changeExpYearStart = (e) => {
+    let copyState = this.state;
+    copyState.experience[copyState.experience.length - 1].yearStart = e.target.value;
+
+    this.setState({
+      copyState
+    });
+  }
+
+  changeExpYearEnd = (e) => {
+    let copyState = this.state;
+    copyState.experience[copyState.experience.length - 1].yearEnd = e.target.value;
+
+    this.setState({
+      copyState
+    });
+  }
+
+  addExp = () => {
+    let copyState = this.state;
+
+    copyState.experience.push({
+      position: "",
+      company: "",
+      yearStart: "",
+      yearEnd: "",
+    });
+
+    this.setState({
+      copyState
+    });
+  };
+
+  removeExp = () => {
+    let copyState = this.state;
+
+    copyState.experience.pop();
+
+    this.setState({
+      copyState
+    });
+  }
+
   render() {
     let functs = {
       'changeName': this.changeName,
@@ -168,9 +238,15 @@ class App extends React.Component {
       'changeDeg': this.changeDeg,
       'changeEYearStart': this.changeEYearStart,
       'changeEYearEnd': this.changeEYearEnd,
-
       'addEd': this.addEd,
       'removeEd': this.removeEd,
+
+      'changePosition': this.changePosition,
+      'changeCompany': this.changeCompany,
+      'changeExpYearStart': this.changeExpYearStart,
+      'changeExpYearEnd': this.changeExpYearEnd,
+      'addExp': this.addExp,
+      'removeExp': this.removeExp,
     };
 
     return (
