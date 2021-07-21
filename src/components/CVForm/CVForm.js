@@ -15,12 +15,10 @@ class CVForm extends React.Component {
             <div class="title">
                 Curriculum
             </div>
-            
+
             <General {...this.props}/>
             <Education {...this.props}/>
-            <Experience {...this.props} />
-            
-            <button onClick={this.props.functions.genPDF}>Generar PDF</button>
+            <Experience {...this.props} />            
         </div>
     );
   }
