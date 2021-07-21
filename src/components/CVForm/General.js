@@ -8,7 +8,7 @@ class General extends React.Component {
   render() {
       return (      
           <div>
-                <div class="title">
+                <div>
                     General  
                 </div>
                 <div class="generalContent">

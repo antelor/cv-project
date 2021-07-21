@@ -35,7 +35,7 @@ class CVPreview extends React.Component {
             </div>
 
             <div class="edPrev">
-                Estudios
+                <div class="title">Estudios</div>
                 {this.props.education.map((item) => {
                     return <div class="edItem">
                         <div class="year">
@@ -49,7 +49,7 @@ class CVPreview extends React.Component {
             </div>
 
             <div class="expPrev">
-                Experiencia
+                <div class="title">Estudios</div>
                 {this.props.experience.map((item) => {
                     return <div class="edItem">
                         <div class="year">

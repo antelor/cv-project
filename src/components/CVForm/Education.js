@@ -8,7 +8,7 @@ class Education extends React.Component {
   render() {
     return (
         <div>
-            <div class="title">
+            <div>
                 Estudios
             </div>
             <div class="edContent">

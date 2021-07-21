@@ -8,7 +8,7 @@ class Experience extends React.Component {
   render() {
     return (
         <div>
-            <div class="title">
+            <div>
                 Experiencia
             </div>
             <div class="expContent">
