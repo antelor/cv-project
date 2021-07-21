@@ -8,36 +8,44 @@ class Experience extends React.Component {
   render() {
     return (
         <div>
-            Experiencia:
-            {this.props.experience.map((item, index, arr) => {
-                if (index == arr.length - 1) {
-                    return <div>
-                        Posicion: <input
-                            onChange={this.props.functions.changePosition}
-                        />
-                        Compania: <input
+            <div class="title">
+                Experiencia
+            </div>
+            <div class="expContent">
+                {this.props.experience.map((item, index, arr) => {
+                    if (index == arr.length - 1) {
+                        return <div>
+                            <input
+                                onChange={this.props.functions.changePosition}
+                                placeholder="Posicion"
+                            />
+                            <input
                                 onChange={this.props.functions.changeCompany}
+                                placeholder="Compania"
                             />
-                        Desde: <input
+                            <input
                                 onChange={this.props.functions.changeExpYearStart}
+                                placeholder="Desde"
                             />
-                        Hasta: <input
+                            <input
                                 onChange={this.props.functions.changeExpYearEnd}
+                                placeholder="Hasta"
                             />
+                            </div>
+                    }
+                    else {
+                        return <div>
+                            Posicion: {item.position}
+                            Compania: {item.company}
+                            Desde: {item.yearStart}
+                            Hasta: {item.yearEnd}
                         </div>
-                }
-                else {
-                    return <div>
-                        Posicion: {item.position}
-                        Compania: {item.company}
-                        Desde: {item.yearStart}
-                        Hasta: {item.yearEnd}
-                    </div>
-                }
-            })}
+                    }
+                })}
 
-            <button onClick={this.props.functions.addExp}>Agregar</button>
-            <button onClick={this.props.functions.removeExp}>Eliminar</button>
+                <button onClick={this.props.functions.addExp}>Agregar</button>
+                <button onClick={this.props.functions.removeExp}>Eliminar</button>
+            </div>
         </div>
     );
   }

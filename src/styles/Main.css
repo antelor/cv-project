@@ -1,0 +1,26 @@
+:root{
+    box-sizing: border-box;
+}
+
+*,
+::before
+::after{
+    box-sizing: inherit;
+}
+
+.mainDiv{
+    padding:4em;
+    display: flex;
+}
+
+.form{
+    width:50%;
+    background-color: lightgray;
+    margin:1em;
+}
+
+.preview{
+    width:50%;
+    background-color: lightgray;
+    margin:1em;
+}

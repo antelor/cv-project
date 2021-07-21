@@ -1,7 +1,5 @@
 import React from 'react'
-import EducationPrev from './EducationPrev.js';
-import ExperiencePrev from './ExperiencePrev.js';
-import GeneralPrev from './GeneralPrev.js';
+import '../../styles/CVPreview.css';
 
 class CVPreview extends React.Component {
   constructor(props) {
@@ -10,11 +8,59 @@ class CVPreview extends React.Component {
 
   render() {
     return (
-        <div>
-            Curriculum preview:
-            <GeneralPrev {...this.props}/>
-            <EducationPrev {...this.props}/>
-            <ExperiencePrev {...this.props}/>
+        <div class="formDiv">
+            <div class="prevHeader">
+                {this.props.wholeName}
+            </div>
+            <div class="genPrev">
+                <label>
+                    Telefono: {this.props.phone}
+                </label>
+
+                <label>
+                    Direccion: {this.props.adress}
+                </label>
+
+                <label>
+                    E-mail: {this.props.email}
+                </label>
+
+                <label>
+                    Descripcion: {this.props.description}
+                </label>
+
+                <label>
+                    Fecha de nacimiento: {this.props.age}
+                </label>
+            </div>
+
+            <div class="edPrev">
+                Estudios
+                {this.props.education.map((item) => {
+                    return <div class="edItem">
+                        <div class="year">
+                            {item.yearStart} - {item.yearEnd}
+                        </div>
+                        <div>
+                            {item.degree} en {item.school}
+                        </div>
+                    </div>
+                })}
+            </div>
+
+            <div class="expPrev">
+                Experiencia
+                {this.props.experience.map((item) => {
+                    return <div class="edItem">
+                        <div class="year">
+                            {item.yearStart} - {item.yearEnd}
+                        </div>
+                        <div>
+                            {item.position} en {item.company}
+                        </div>
+                    </div>
+                })}
+            </div>
         </div>
     );
   }

@@ -1,0 +1,49 @@
+:root{
+    box-sizing: border-box;
+}
+
+*,
+::before
+::after{
+    box-sizing: inherit;
+}
+
+.formDiv{
+    margin:1em;
+    padding:1em;
+    font-size:20px;
+}
+
+.prevHeader{
+    background-color:white;
+    position:sticky;
+    top:0;
+    left:0;
+    padding:1em;
+    margin:0;
+}
+
+label{
+    display: block;
+}
+
+.genPrev{
+    margin:1em;
+}
+
+.edPrev{
+    margin: 1em;
+}
+
+.edItem{
+    display: flex;
+}
+
+.year{
+    font-weight: bold;
+    margin-right: 4px;
+}
+
+.expPrev{
+    margin: 1em;
+}

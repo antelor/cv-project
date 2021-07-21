@@ -62,6 +62,7 @@ class App extends React.Component {
     this.addExp = this.addExp.bind(this);
     this.removeExp = this.removeExp.bind(this);
 
+    this.genPDF = this.genPDF.bind(this);
   }
 
   //General
@@ -225,6 +226,10 @@ class App extends React.Component {
     });
   }
 
+  genPDF = () => {
+    
+  }
+
   render() {
     let functs = {
       'changeName': this.changeName,
@@ -247,6 +252,8 @@ class App extends React.Component {
       'changeExpYearEnd': this.changeExpYearEnd,
       'addExp': this.addExp,
       'removeExp': this.removeExp,
+
+      'genPDF': this.genPDF,
     };
 
     return (
