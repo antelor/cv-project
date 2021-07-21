@@ -53,6 +53,9 @@ class App extends React.Component {
     this.changeDeg = this.changeDeg.bind(this);
     this.changeEYearStart = this.changeEYearStart.bind(this);
     this.changeEYearEnd = this.changeEYearEnd.bind(this);
+
+    this.addEd = this.addEd.bind(this);
+    this.removeEd = this.removeEd.bind(this);
   }
 
   changeName = (e) => {
@@ -127,6 +130,31 @@ class App extends React.Component {
     });
   }
 
+  addEd = () => {
+    let copyState = this.state;
+
+    copyState.education.push({
+      school: "",
+      degree: "",
+      yearStart: "",
+      yearEnd: "",
+    });
+
+    this.setState({
+      copyState
+    });
+  };
+
+  removeEd = () => {
+    let copyState = this.state;
+
+    copyState.education.pop();
+
+    this.setState({
+      copyState
+    });
+  }
+
   render() {
     let functs = {
       'changeName': this.changeName,
@@ -140,6 +168,9 @@ class App extends React.Component {
       'changeDeg': this.changeDeg,
       'changeEYearStart': this.changeEYearStart,
       'changeEYearEnd': this.changeEYearEnd,
+
+      'addEd': this.addEd,
+      'removeEd': this.removeEd,
     };
 
     return (
